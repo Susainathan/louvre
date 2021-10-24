@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register with Louvre</title>
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+        #id{
+        border:3px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="id" style="margin-left:40px;margin-right:40px">
+<nav class="navbar navbar-expand-lg p-5" style="background-color:black;">
+    <img src="{%static 'image/logolouvre.jpg'%}">
+    <h1 class="text-white offset-md-1 display-4" style="font-family:Adobe Garamond Pro">Louvre Registration Page</h1>
+</nav>
+    <nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+    <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+    <h3 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Your Details</h3>
+</nav>
+    <div class="p-5">
+    <h6 class="display-4" style="font-family:Adobe Garamond Pro">Your account</h6>
+    <h6>Register your account in order to access your orders later. We are committed to keeping your information secure and confidential.</h6>
+</div>
+<nav class="navbar navbar-expand-lg bg-secondary" style="height:40px">
+    <h2 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;"> Enter your Details</h2>
+</nav>
+    <div class="form-group">
+        <form class="col-md-4 offset-md-4 p-4" enctype="multipart/form-data" method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-success" style="border-radius:10px">Submit</button>
+            <a href="{% url 'signin' %}" class="btn btn-info" style="border-radius:10px;margin-left:300px;margin-top:-60px">Signin</a>
+        </form>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{% url 'visitor' %}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+</nav>
+<div style="background-color:black;padding:150px">
+    <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+</div>
+</div>
+</body>
+</html>

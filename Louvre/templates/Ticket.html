@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'image/logo.png'%}" rel="icon">
+    <style>
+        #id{
+        border:2px solid black;
+        }
+        .column{
+        float:left;
+        width:50%;
+        }
+    </style>
+</head>
+<body>
+<div id="id" style="margin-left:40px;margin-right:40px">
+    <nav class="navbar navbar-expand-lg p-5" style="background-color:black;">
+        <img src="{%static 'image/logolouvre.jpg'%}">
+        <h1 class="text-white offset-md-1 display-4" style="font-family:Adobe Garamond Pro;">Official Ticketing Service</h1>
+        {% if user.is_authenticated %}
+        <a class="btn btn-outline-info" href="{% url 'signin'%}"
+        style="letter-spacing:2px;margin-left:15%;color:white;border-radius:18px;font-family:Adobe Garamond Pro">Log Out</a>
+        {% endif %}
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+        <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+        <h3 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Individual Ticketing Service</h3>
+    </nav>
+        <div class="p-5">
+            <h6 class="display-4" style="font-family:Adobe Garamond Pro">Individual tickets for the Museum</h6><br>
+            <h6>For sanitary and safety reasons, visitors will be required to wear a mask.</h6>
+            <br>
+            <h6 class="text-info">In accordance with government recommendations, all visitors to the Louvre aged 12 years and two months or older must show a Health Pass</h6>
+            <br>
+            <h6>Tickets valid for the selected date only. </h6>
+        </div>
+    <nav class="navbar navbar-expand-lg bg-secondary" style="height:40px">
+        <h2 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;"> Enter your Details</h2>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+        <h3 class="text-info" style="font-family:Adobe Garamond Pro;background-color:lightgray;">{{message}}</h3>
+        {% endfor %}
+    {% endif %}
+
+    <div class="column" id="id">
+        <div class="form-group">
+                <form class="offset-md-1 p-4"  enctype="multipart/form-data" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="btn btn-success" style="border-radius:10px">Submit</button>
+                </form>
+            </div>
+    </div>
+    <div class="column ">
+        <div class=" bg-dark col-md-8 offset-md-4 p-4">
+            <p class="text-white" style="font-size:20px">The Musee du Louvre is open every day—except Tuesdays, January 1, May 1 and December 25—from 9:00 a.m. to 6:00 p.m. Visitors will be asked to vacate the exhibition rooms 30 minutes before closure</p>
+            <h6 class="text-white">Le billet achete en ligne est horodate et nominatif, un document identite peut etre demande.</h6>\
+            <p class="text-white">Le billet acheté en ligne est horodaté et nominatif, un document d’identité peut être demandé.
+            Il est valable exclusivement pour la prestation, la date et à compter de l'heure mentionnée. Il ne constitue pas un coupe file mais permet un accès à la pyramide du Louvre dans la demi-heure de l'horaire indiqué. En cas de non-respect de ce créneau horaire, le porteur du billet print@home est soumis aux mêmes conditions d'accès et d'attente que les visiteurs sans billet.</p>
+            <h6 class="text-white">Porteurs de cartes professionnelles :</h6>
+            <p class="text-white">- les enseignants sur présentation du Pass Éducation en cours de validité et portant le cachet de l'établissement,</p>
+            <p class="text-white">- les enseignants en histoire des arts, histoire de l'art, arts plastiques, arts appliqués, en activité, sur présentation d'un justificatif  mentionnant la matière enseignée,</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{%url 'visitor'%}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+    </nav>
+    <div style="background-color:black;padding:150px">
+        <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+    </div>
+</div>
+</body>
+</html>

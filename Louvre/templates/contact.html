@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact us</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+          #id1{
+        margin-left:38%;
+        font-family:Adobe Garamond Pro;
+        letter-spacing:4px;
+        font-weight: lighter;
+        }
+        #id2{
+        margin-left:30%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id3{
+        margin-left:20%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id4{
+        margin-left:40%;
+        }
+        #id5{
+        margin-left:3%;
+        }
+        #id6{
+        margin-left:3%;
+        }
+        #image{
+        background:url({% static "image/louvre-c.jpg"%})no-repeat;
+            height:500px;
+            background-size:cover;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color:black">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white offset-md-9" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+      <h1 class="text-white display-4" id="id1">L<small>OUVRE</small></h1>
+      <a class="btn btn-outline-success text-white" id="id2" href="{%url 'signin'%}" target="_blank">Tickets</a>
+  </div>
+
+</nav>
+<nav class="navbar navbar-expand-lg p-3" style="background-color:black">
+    <a id="id4" class="text-white" href="{%url 'visit'%}"><strong>VISIT</strong></a>
+    <a id="id5" class="text-white" href="{%url 'explore'%}"><strong>EXPLORE</strong></a>
+    <a id="id6" class="text-white" href="{%url 'whatson'%}"><strong>WHAT'S ON</strong></a>
+</nav>
+<nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+    <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+    <h4 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Visit > Visitor Rules</h4>
+</nav>
+<div id="image">
+    <div class="container col-md-6 offset-md-2 p-5" style=" bottom:-60%;">
+        <h3 style="color:white;letter-spacing:2px;font-family:Lucida Console">CONTACT US</h3>
+        <h4 style="color:white;font-family:Lucida Console">Find the right contact details</h4>
+    </div>
+</div>
+    <div class="col-md-6 offset-md-3">
+        <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;margin-top:100px;"><small><strong>GENERAL INFORMATION</strong></small></h4>
+        <p style="font-size:18px">For general questions, requests for information or to send us feedback, please contact us </p>
+        <p style="font-size:18px"><strong>by email at :</strong> info@louvre.fr</p>
+    </div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{%url 'visitor'%}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+    </nav>
+    <div style="background-color:black;padding:150px">
+        <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+    </div>
+</body>
+</html>

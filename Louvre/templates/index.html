@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Louvre Museum Official Website</title>
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+        #id1{
+        margin-left:38%;
+        font-family:Adobe Garamond Pro;
+        letter-spacing:4px;
+        font-weight: lighter;
+        }
+        #id2{
+        margin-left:30%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id3{
+        margin-left:20%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id4{
+        margin-left:40%;
+        }
+        #id5{
+        margin-left:3%;
+        }
+        #id6{
+        margin-left:3%;
+        }
+        {% load static %}
+        #image{
+            background:url({% static "image/paris.jpg"%})no-repeat;
+            height:500px;
+            background-size:cover;
+
+        }#imageone{
+            background:url({% static "image/garden.jpg"%})no-repeat;
+            height:500px;
+            background-size:cover;
+
+        }#imagetwo{
+            background:url({% static "image/gardentwo.jpg"%})no-repeat;
+            height:500px;
+            background-size:cover;
+
+        }
+      </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="background-color:black">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white offset-md-9" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+      <h1 class="text-white display-4" id="id1">L<small>OUVRE</small></h1>
+      <a class="btn btn-outline-success text-white" id="id2"  href="{%url 'signin'%}" target="_blank">Tickets</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg p-3" style="background-color:black">
+    <a id="id4" class="text-white" href="{%url 'visit'%}"><strong>VISIT</strong></a>
+    <a id="id5" class="text-white" href="{%url 'explore'%}"><strong>EXPLORE</strong></a>
+    <a id="id6" class="text-white" href="{% url 'whatson' %}"><strong>WHAT'S ON</strong></a>
+</nav>
+<div id="image">
+    <div class="container col-md-6 offset-md-2 p-5">
+        <p class="text-white font-weight-light" style="font-family:Trajan Pro;font-size:50px;
+        serif; bottom: 30%;"><lighter>ESCAPE WITH THE<br> LOUVRE</lighter></p>
+        </div>
+    <div class="container col-md-6 offset-md-2 p-5" style=" bottom:2%;">
+    <a href="{%url 'signin'%}" class="btn btn-info" style="border-radius:15px;padding-left:50px" target="_blank">Book tickets</a>
+        <br><br><br>
+        <ul>
+            <li>
+        <p class="text-white"><strong>The museum is open today from 9:00 AM to 6:00 PM</strong></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container p-5 col-md-6 offset-md-1">
+
+    <h3 style="font-family:Century Schoolbook"><small><strong>INFORMATION REGARDING COVID-19</strong></small></h3><br>
+    <p style="font-family:Century Schoolbook" class="display-6">Time-slot bookings are compulsory, including for free-admission visitors.In accordance with government recommendations, all visitors to the Louvre aged 12 years and two months or older must show a Health Pass. All visitors aged 11 and over must wear face masks.</p>
+    <br>
+    <a href="" style="text-decoration:underline;color:black"><strong>Find out More-></strong></a>
+</div>
+<br>
+<div class="container p-5 col-md-8 offset-md-1">
+    <h3 style="font-family:Century Schoolbook"><small><strong>WELCOME TO THE LOUVRE</strong></small></h3><br><br>
+    <p>There are plenty of good reasons to visit the Louvre! So many works of art to discover in this fabulous museum that used to be a palace! So plan your visit in advance to make the most of it. Why not pick one of our visitor trails to follow a theme-based tour? And when you need a break, where better than the museum’s restful gardens?
+</p>
+</div>
+<div class="p-5">
+    <h3 style="color:green;font-family:Century Schoolbook"><small>THE GARDENS</small></h3>
+    <p id="imageone"></p>
+    <p id="imagetwo"></p>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{%url 'visitor'%}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+</nav>
+<div style="background-color:black;padding:150px">
+    <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+</div>
+</body>
+</html>

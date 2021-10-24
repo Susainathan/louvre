@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+          #id1{
+        margin-left:38%;
+        font-family:Adobe Garamond Pro;
+        letter-spacing:4px;
+        font-weight: lighter;
+        }
+        #id2{
+        margin-left:30%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id3{
+        margin-left:20%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id4{
+        margin-left:40%;
+        }
+        #id5{
+        margin-left:3%;
+        }
+        #id6{
+        margin-left:3%;
+        }
+        #image{
+        background:url({% static 'image/paly.jpg'%})no-repeat;
+        height:550px;
+        background-size:cover;
+        }
+        #column{
+        float:left;
+        width:50%;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color:black">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white offset-md-9" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+      <h1 class="text-white display-4" id="id1">L<small>OUVRE</small></h1>
+      <a class="btn btn-outline-success text-white" id="id2" href="{%url 'signin'%}" target="_blank">Tickets</a>
+  </div>
+
+</nav>
+<nav class="navbar navbar-expand-lg p-3" style="background-color:black">
+    <a id="id4" class="text-white" href="{%url 'visit'%}"><strong>VISIT</strong></a>
+    <a id="id5" class="text-white" href="{%url 'explore'%}"><strong>EXPLORE</strong></a>
+    <a id="id6" class="text-white" href="{% url 'whatson' %}"><strong>WHAT'S ON</strong></a>
+</nav>
+<nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+    <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+    <h4 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Explore</h4>
+</nav>
+<div id="image">
+    <div class="container col-md-6 offset-md-2 p-5" style=" bottom:-60%;">
+        <h3 style="color:white;letter-spacing:2px;font-family:Lucida Console">EXPLORE</h3>
+        <h4 style="color:white;font-family:Lucida Console">The treasures of the Louvre palace and collections</h4>
+    </div>
+</div>
+<div class="bg-dark">
+    <div class="container p-5">
+    <h3 style="color:white;letter-spacing:2px; font-family:Lucida Console;">THE PALACE</h3>
+        <p style="font-size:20px;" class="col-md-6 text-white">Explore the former palace of the kings of France – now the largest museum in the world covering almost 10,000
+            years of history! The palace is divided into three wings: Richelieu, Sully and Denon. Take your pick!</p>
+    </div>
+</div>
+<div class="bg-dark">
+    <div id="column">
+    <div style="display:black;" class="container-fluid p-5 bg-dark">
+        <img src="{% static 'image/josh.jpg' %}" class="col-md-12">
+        <h4 class="col-md-12 text-white" style="margin-left:48px; margin-top:-150px;letter-spacing:2px; font-family:Lucida Console;">St-Joseph-the-Carpenter-oil<br>-canvas-Georges-1645</h4>
+        <img src="{% static 'image/roman.png' %}" class="col-md-12" style="padding-top:150px">
+        <h4 class="col-md-12 text-white" style="margin-left:48px; margin-top:-150px;margin-bottom:440px;letter-spacing:2px; font-family:Lucida Console;">Victory of Samothrace | Roman sculpture</h4>
+    </div>
+    </div>
+    <div class="bg-dark" id="column" style="padding-right:40px">
+        <img src="{% static 'image/venus.jpg' %}" class="col-md-12">
+        <h4 class="col-md-12 text-white" style="text-align:center; margin-top:-150px;letter-spacing:2px; font-family:Lucida Console;">Venus do Milo</h4>
+        <img src="{% static 'image/love.jpg' %}" class="col-md-12" style="padding-top:120px">
+        <h4 class="col-md-12 text-white" style="text-align:center; margin-top:-200px;margin-bottom:200px;letter-spacing:2px; font-family:Lucida Console;">The Nature of Love</h4>
+    </div>
+</div>
+    <div class="container p-5">
+        <h2 class="text-danger"style="letter-spacing:2px; font-family:Lucida Console;"><small>COLLECTIONS</small></h2>
+        <h2 class="col-md-5" style="font-family:Century Schoolbook;margin-top:100px;letter-spacing:2px">The museum’s entire collection on one platform</h2>
+        <p style="font-size:20px" class="col-md-6">The Collections database consists of entries for more than 480,000 works in the Musée du Louvre and Musée National Eugène-Delacroix. Updated on a daily basis, it is the result of the continuous research and documentation efforts carried out by teams of experts from both museums.</p>
+        <img src="{%static 'image/mona.jpg'%}" class="col-md-6 offset-md-7" style="margin-top:-300px;margin-bottom:50px;height:600px;width:500px">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{%url 'visitor'%}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+    </nav>
+    <div style="background-color:black;padding:150px">
+        <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+    </div>
+
+</body>
+</html>

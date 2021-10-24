@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+        #id{
+        border:3px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="id" style="margin-left:40px;margin-right:40px">
+<nav class="navbar navbar-expand-lg p-5" style="background-color:black;">
+    <img src="{%static 'image/logolouvre.jpg'%}">
+    <h1 class="text-white offset-md-1 display-4" style="font-family:Adobe Garamond Pro">Louvre Login Page</h1>
+    <a class="btn btn-outline-info" href="{% url 'regist'%}"
+       style="letter-spacing:2px;margin-left:20%;color:white;border-radius:18px;font-family:Adobe Garamond Pro">Register with Louvre</a>
+</nav>
+<nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+    <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+    <h3 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Login Page</h3>
+</nav>
+<div class="p-5">
+    <h1 style="font-family:Adobe Garamond Pro"><strong>Your account</strong></h1>
+    <h6>Please sign up for your account or sign in.
+    <br>This account allows you to download and print your tickets, and change the date, the time slot or the name of the ticket's holder.
+    <br>If you have already filled in an e-mail address without a password from a previous purchase, please click on the "Forgotten password" button.</h6>
+</div>
+<nav class="bg-secondary">
+    <h2 class="text-white" style="font-family:Adobe Garamond Pro;margin-left:37px;padding:10px"><strong>Sign in to your account</strong></h2>
+</nav>
+    {% if messages %}
+            {% for message in messages %}
+            <h3 class="text-info offset-md-4" style="font-family:Adobe Garamond Pro;">{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+<div>
+    <h4 style="margin-left:100px;margin-right:100px">Please enter your email address and password to access to your account.</h4>
+    <form class="container p-3 col-md-3 offset-md-3 form-group" method="POST" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <input type="submit" value="Login" class="btn btn-outline-primary btn-sm" style="border-radius:15px">
+    </form>
+</div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+</nav>
+<div style="background-color:black;padding:150px">
+    <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitor Rules</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'image/logo.png'%}" rel="icon">
+    <style>
+          #id1{
+        margin-left:38%;
+        font-family:Adobe Garamond Pro;
+        letter-spacing:4px;
+        font-weight: lighter;
+        }
+        #id2{
+        margin-left:30%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id3{
+        margin-left:20%;
+        letter-spacing:4px;
+        font-family:Georgia, serif;
+        border-radius:15px;
+        }
+        #id4{
+        margin-left:40%;
+        }
+        #id5{
+        margin-left:3%;
+        }
+        #id6{
+        margin-left:3%;
+        }
+        #image{
+        background:url({% static 'image/6.jpg'%})no-repeat;
+        height:600px;
+        background-size:cover;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color:black">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white offset-md-9" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+      <h1 class="text-white display-4" id="id1">L<small>OUVRE</small></h1>
+      <a class="btn btn-outline-success text-white" id="id2" href="{% url 'signin' %}" target="_blank">Tickets</a>
+  </div>
+
+</nav>
+<nav class="navbar navbar-expand-lg p-3" style="background-color:black">
+    <a id="id4" class="text-white" href="{%url 'visit'%}"><strong>VISIT</strong></a>
+    <a id="id5" class="text-white" href="{%url 'explore'%}"><strong>EXPLORE</strong></a>
+    <a id="id6" class="text-white" href="{% url 'whatson' %}"><strong>WHAT'S ON</strong></a>
+</nav>
+<nav class="navbar navbar-expand-lg bg-info" style="height:40px">
+    <img src="{%static 'image/logo.png'%}" style="height:25px;width:25px">
+    <h4 style="margin-left:30px; margin-top:8px;font-family:Adobe Garamond Pro;color:white;">/ Visit > Visitor Rules</h4>
+</nav>
+<div id="image">
+    <div class="container col-md-6 offset-md-2 p-5" style=" bottom:-60%;">
+        <h3 style="color:white;letter-spacing:2px;font-family:Lucida Console">MUSEUM RULES</h3>
+        <h4 style="color:white;font-family:Lucida Console">To ensure the safety of all visitors and artworks</h4>
+    </div>
+</div>
+<div class="col-md-6 offset-md-3">
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;margin-top:100px;"><small><strong>VIGIPIRATE</strong></small></h4>
+    <p style="font-size:18px">To ensure the safety of all visitors, the Louvre applies the preventative measures decided on by the French government for all public services. All visitors must undergo the security checks at the museum entrances. </p>
+    <p style="font-size:18px">Suitcases and large bags are not allowed in the museum.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>MAXIMUM SIZE OF BAG ALLOWED</strong></small></h4>
+    <p style="font-size:18px">You cannot bring large bags or suitcases to the museum but lockers are available free of charge for smaller items.</p>
+    <p style="font-size:18px"><strong>Please note:</strong> Any items exceeding<strong> 55 x 35 x 20 cm</strong>> will not be allowed in the museum (welcome area and exhibition rooms).</p>
+    <p style="font-size:18px">All items left in the lockers must be collected the same day. The museum shall not be held responsible for any items of value placed in the lockers. Please contact us for further information.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>PHOTOGRAPHY</strong></small></h4>
+    <p style="font-size:18px">You can take photos and videos in the permanent collections if they are for personal use. However, you are not allowed to use selfie sticks, flash or lighting.</p>
+    <p style="font-size:18px">In the temporary exhibition galleries, it may be prohibited to take photos or videos of certain works.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>LOAN OF EQUIPMENT</strong></small></h4>
+    <p style="font-size:18px">Equipment on loan must not leave the premises.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>LEAVING THE MUSEUM</strong></small></h4>
+    <p style="font-size:18px">In order to help us manage the number of visitors and queues, any exit is final.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>RESPECT THE ARTWORKS</strong></small></h4>
+    <p style="font-size:18px">To ensure the safety of the artworks and other visitors, in the exhibition rooms you are not allowed to:</p>
+    <br>
+    <ul>
+            <li>Drink;</li>
+            <li>Eat;</li>
+            <li>Smoke;</li>
+            <li>Make a lot of noise;</li>
+            <li>Touch the artworks;</li>
+            <li>Run.</li>
+    </ul>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>PROHIBITED ITEMS</strong></small></h4>
+    <ul>
+        <li>all categories of weapons and ammunition</li>
+        <li>tools, in particular craft knives, screwdrivers, wrenches, hammers, pliers and clippers</li>
+        <li>all blunt objects (self-defence batons, baseball bats)</li>
+        <li>any excessively heavy, cumbersome, or foul-smelling item</li>
+        <li>any explosive, flammable or volatile substance</li>
+        <li>aerosol generators (dyes, paints and lacquers) containing substances likely to damage artworks, buildings and/or security equipment</li>
+        <li>any item generating incapacitating or neutralising products, or electrical weapon used to neutralise individuals</li>
+        <li>any artwork or antique</li>
+        <li>excessive quantities of food or drink as determined by inspecting officers at the entrance to the reception areas</li>
+        <li>all animals, with the exception of guide dogs or assistance dogs accompanying persons with motor or mental impairment</li>
+    </ul>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>RIGHT TO SPEAK PUBLICLY</strong></small></h4>
+    <p style="font-size:18px">Only those who have been authorised to do so are allowed to speak publicly in the exhibition rooms. This includes curators, teachers to their class, and professional tour guides with a permit from the French Ministry of Culture or Minister of Tourism.</p>
+    <br>
+    <hr>
+    <h4 class="text-dark p-4" style="letter-spacing:2px;font-family:Lucida Console;"><small><strong>RESPECT THE GARDENS</strong></small></h4>
+    <p style="font-size:18px">To prevent damage to the ground, plants and sculptures, and for hygiene and safety reasons, you are not allowed to: </p>
+    <ul>
+        <li>use mono- or bicycles in the gardens;</li>
+        <li>walk or sit on the lawns;</li>
+        <li>pick the plants;</li>
+        <li>touch or climb the sculptures;</li>
+        <li>walk your pet (pets are only allowed in the cafe terraces);</li>
+        <li>feed the birds;</li>
+        <li>remove the chairs from the premises.</li>
+    </ul>
+    <hr>
+    <br>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black">
+    <div class="navbar-nav">
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:40px" href="#"><strong>ABOUT</strong></a><br>
+            <a href="{%url 'visitor'%}" style="margin-left:60px;text-decoration:none;color:white">Visitor rules</a>
+            <a href="{%url 'contact'%}" style="margin-left:60px;text-decoration:none;color:white">Contact Us</a>
+        </div>
+        <div>
+            <a class="nav-item nav-link text-white" style="font-family:serif;letter-spacing:2px;margin-left:500px" href="#"><strong>MEMBERSHIP</strong></a><br>
+            <img src="{% static 'image/logoamis.png'%}"  style="margin-left:470px;">
+        </div>
+      </div>
+
+    </nav>
+    <div style="background-color:black;padding:150px">
+        <img src="{%static 'image/logolouvre.jpg'%}" style="margin-left:40%">
+    </div>
+</body>
+</html>
