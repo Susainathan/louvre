@@ -1,1 +1,1 @@
-web gunicorn Main.wsgi
+we gunicorn Main.wsgi
