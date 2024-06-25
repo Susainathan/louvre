@@ -14,9 +14,10 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      # Print the SONAR_HOST_URL
-      - name: Print SonarQube URL
-        run: echo "SonarQube URL: ${{ secrets.SONAR_HOST_URL }}"
+      - name: Set up environment variables
+        run: |
+          echo "SONAR_HOST_URL=${{ secrets.SONAR_HOST_URL }}" >> $GITHUB_ENV
+          echo SONAR_HOST_URL
 
       - uses: sonarsource/sonarqube-scan-action@master
         env:
