@@ -16,7 +16,11 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "${{ secrets.SONAR_TOKEN }}"
+          echo "SONAR_HOST_URL=${{ secrets.SONAR_HOST_URL }}" >> $GITHUB_ENV
+
+      - name: Encode and print SonarQube URL
+        run: |
+          echo "Encoded SonarQube URL: $(echo -n $SONAR_HOST_URL | base64)"
 
       # - uses: sonarsource/sonarqube-scan-action@master
       #   env:
