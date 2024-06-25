@@ -17,7 +17,7 @@ jobs:
       - name: Set up environment variables
         run: |
           echo "SONAR_HOST_URL=${{ secrets.SONAR_HOST_URL }}" >> $GITHUB_ENV
-          echo "${{ secrets.SONAR_HOST_URL }}"
+          echo "${{ secrets }}"
 
       - uses: sonarsource/sonarqube-scan-action@master
         env:
